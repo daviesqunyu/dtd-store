@@ -41,7 +41,7 @@
     <input type="email" id="login-email" placeholder="admin@dtd.store" />
     <label>Password</label>
     <input type="password" id="login-pass" placeholder="••••••••" />
-    <button class="btn" onclick="login()">Login</button>
+    <button class="btn" id="login-btn">Login</button>
   </div>
 </div>
 
@@ -198,6 +198,7 @@
   supabase.auth.getSession().then(({ data }) => {
     if (data.session) showAdmin();
   });
+  document.getElementById('login-btn').addEventListener('click', login);
 </script>
 </body>
 </html>
